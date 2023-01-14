@@ -1,0 +1,179 @@
+@font-face {
+  font-family: flappybird;
+  src: url("http://www.mediafont.com/storage/contents/3184/font.eot"); /* IE */
+  src: url("http://www.mediafont.com/storage/contents/3184/04B_19__.TTF"); /* non-IE */
+}
+
+body {
+  margin: 0; /* Make sure the body has 0 margin initially */
+  width: 100%; /* Define we're using full width of the browser */
+  height: 100%; /* Define we're using full height of the browser */
+  overflow: hidden; /* Hide scrollbars */
+}
+#Canvas {
+  position: relative; /* Position relative, so all absolute items will be "contained"" through here */
+  width: 100%; /* Define that we're using the full width of the body */
+  height: 100%; /* Define that we're using the full width of the body */
+  background: steelblue; /* Temporary color background */
+}
+#Birdy {
+  /* Ratio is about 1.449 (Width/Height) */
+  width: 2.9%;
+  padding-bottom: 2%;
+
+  background-image: url("http://flappybird.io/img/bird.png");
+
+  background-size: 300%; /* Make the width 300% of the current width, so that only 1 frame fits and the other 2 frames are hidden */
+
+  position: absolute; /* Absolutely positioned, so it's out of flow of regular elements, position wherever we'd like */
+  top: 50%; /* We're going to be around middle of the screen (a bit lower due to height)*/
+  left: 20%; /* We're going to be at around 20% left of the screen */
+
+  z-index: 150; /* Display in front of pipes even after getting hit by them */
+}
+
+.FallenBirdy {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#PauseButton {
+  position: absolute;
+  /* Position button so it's not hugging the screen edge */
+  top: 2%;
+  right: 1%;
+
+  width: 3%; /* Make the width scale with the canvas size */
+  height: 0; /* Set an initial 0 height */
+  /* Use padding of same width% to create a square
+     Padding uses percentages based on width, so we're going to use padding that'll add up to 3%*/
+  padding-top: 1.25%;
+  padding-bottom: 1.75%;
+
+  background: orange;
+
+  border-radius: 5px; /*Rounded corners*/
+
+  font-size: 2.6vw; /* Scale Font to 3% of ViewPort*/
+  text-align: center; /* Horiziontally center pause text */
+
+  z-index: 50; /* Make it lay on top of the pipes */
+
+  cursor: pointer; /* Make it appear like it's a button so the cursor turns into a hand when hovered */
+}
+#PauseButton span {
+  line-height: 3%; /*Vertically center the pause text */
+  margin-left: 3%; /* Adjust pause text position */
+}
+
+.Pipe {
+  position: absolute; /* Position it absolutely, not in document flow */
+  top: 0; /* Hug the top of the screen */
+  left: 100%; /* Start off the screen */
+
+  width: 5%; /* Arbitrary pipe percentage */
+
+  background-color: red;
+  animation: PipeMovement 15s linear; /* Run the movement animation in 15 seconds linearly */
+  -webkit-animation: PipeMovement 15s linear; /* webkit prefix */
+}
+
+@keyframes PipeMovement {
+  from {
+    left: 100%;
+  } /* Define that we'll start at position 100% left (off screen to the right) */
+  to {
+    left: -25%;
+  } /* Define that we'll end at -25% left (off screen to the left) */
+}
+@-webkit-keyframes PipeMovement {
+  /* webkit prefix */
+  from {
+    left: 100%;
+  }
+  to {
+    left: -25%;
+  }
+}
+
+/* Pause the animation when the user hits the pause button */
+.paused {
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+/* Prevents the user from highlighting elements we don't want highlighted' */
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#LostScoreScreen {
+  /* Position the score box so it's perfectly centered on screen */
+  position: relative; /* Position relative inside the absolute container */
+  left: -50%; /* Move it so half of it is left of the center */
+  margin-top: -70%; /* Raise it so that it's about center */
+
+  padding: 5px 0px 5px 12px; /* Center the text properly and give it a bit of space */
+
+  background: #ded895; /* Random color, kinda matches flappy bird */
+
+  border-radius: 4%; /* Give it rounded edges */
+  border: 2px solid black; /* 2px thick black border for the score screen */
+
+  text-align: center; /* Horiziontally center the text */
+
+  display: none; /* Hide initially */
+
+  font-family: flappybird; /* Use the flappybird font for the score */
+  font-size: 2vw; /* Scale the font to 2% of viewport */
+
+  color: white; /* White font */
+  text-shadow: /* Give it a 2px of "text shadow" to act as an outline to the score text */ -2px -2px
+      0 #000,
+    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+
+  z-index: 150; /* Pop the box above the pipes */
+}
+
+#CurrentScoreCard {
+  /* Position the score box so it's perfectly centered on screen */
+  position: relative; /* Position relative inside the absolute container */
+  left: -50%; /* Move it so half of it is left of the center */
+  margin-top: -700%; /* Raise it so that it's above center */
+
+  text-align: center; /* Horiziontally center the text */
+
+  font-family: flappybird; /* Use the flappybird font for the score */
+  font-size: 4vw; /* Scale the font to 2% of viewport */
+
+  color: white; /* White font */
+  text-shadow: /* Give it a 2px of "text shadow" to act as an outline to the score text */ -2px -2px
+      0 #000,
+    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+
+  z-index: 50; /* Raise above the pipes */
+}
+
+#DebugInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 250px;
+  z-index: 25;
+  background: gray;
+  opacity: 0.7;
+  color: white;
+  display: none;
+}

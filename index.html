@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./configs/configs.css" />
+    <link rel = "icon" href="./configs/matths/bird_88593.png"/>
+    <title>Flappy bird</title>
+
+    <!-- Bootstrap CSS from MaxCDN -->
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div id="Canvas">
+      <!-- Inline CSS -->
+
+      <div
+        id="InstructionBox"
+        style="position: absolute; left: 50%; display: none"
+      >
+        <div
+          style="
+            position: relative;
+            left: -50%;
+            z-index: 150;
+            font-family: flappybird;
+            color: white;
+            font-size: 2vw;
+          "
+          class="noSelect"
+        >
+          Click to Fly <br />
+          "1" to Reset <br />
+          "2" to Pause
+        </div>
+      </div>
+
+      <div style="position: absolute; left: 50%; top: 50%">
+        <div id="CurrentScoreCard" class="noSelect">
+          <span id="CurrentScore">0</span>
+        </div>
+      </div>
+
+      <div style="position: absolute; left: 50%; top: 50%">
+        <div id="LostScoreScreen" class="noSelect">
+          <span>Score</span>
+          <br />
+          <span id="FinalScore">0</span>
+          <br />
+          <span>Best</span>
+          <br />
+          <span id="BestScore">0</span>
+          <br />
+          <button id="ResetButton" type="button" class="btn btn-warning">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div id="DebugInfo" class="noSelect"></div>
+      <div id="Birdy" style="background-position-x: 400%"></div>
+      <div id="PauseButton" class="noSelect">
+        <span class="glyphicon glyphicon-pause"></span>
+      </div>
+    </div>
+
+    <!-- jQuery from Google CDN -->
+    <script src="./configs/other.js"></script>
+    <script src="./configs/game.js"></script>
+
+  </body>
+</html>

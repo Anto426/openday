@@ -20,7 +20,7 @@ body {
   width: 2.9%;
   padding-bottom: 2%;
 
-  background-image: url("http://flappybird.io/img/bird.png");
+  background-image: url("./file/bird.png");
 
   background-size: 300%;
 
@@ -43,8 +43,8 @@ body {
   z-index: 150;
   font-family: flappybird;
   color: white;
-  font-size: 2vw;
-  border-radius: 10px;
+  font-size: 1.5vw;
+  border-radius: 5px;
 }
 .FallenBirdy {
   -webkit-transform: rotate(90deg);
@@ -158,9 +158,10 @@ body {
 }
 
 #CurrentScoreCard {
+ 
   position: relative;
   left: -50%;
-  margin-top: -1200%;
+  margin-top: 22%;
 
   text-align: center;
 
@@ -168,10 +169,11 @@ body {
   font-size: 4vw;
 
   color: white;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-    2px 2px 0 #000;
+  text-shadow: -2px -2px
+      0 #000,
+    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 
-  z-index: 50;
+
 }
 
 #DebugInfo {

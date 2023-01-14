@@ -108,7 +108,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Prevents the user from highlighting elements we don't want highlighted' */
+
 .noSelect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -119,16 +119,18 @@ body {
 }
 
 #LostScoreScreen {
+  width: 300px;
+  height: 300px;
   /* Position the score box so it's perfectly centered on screen */
   position: relative; /* Position relative inside the absolute container */
   left: -50%; /* Move it so half of it is left of the center */
-  margin-top: -70%; /* Raise it so that it's about center */
-
+  margin-top: -50%; /* Raise it so that it's about center */
+  size-adjust: 20px;
   padding: 5px 0px 5px 12px; /* Center the text properly and give it a bit of space */
 
   background: #ded895; /* Random color, kinda matches flappy bird */
 
-  border-radius: 4%; /* Give it rounded edges */
+  border-radius: 10%; /* Give it rounded edges */
   border: 2px solid black; /* 2px thick black border for the score screen */
 
   text-align: center; /* Horiziontally center the text */
@@ -150,15 +152,15 @@ body {
   /* Position the score box so it's perfectly centered on screen */
   position: relative; /* Position relative inside the absolute container */
   left: -50%; /* Move it so half of it is left of the center */
-  margin-top: -700%; /* Raise it so that it's above center */
+  margin-top: -700%; 
 
-  text-align: center; /* Horiziontally center the text */
+  text-align: center;
 
-  font-family: flappybird; /* Use the flappybird font for the score */
-  font-size: 4vw; /* Scale the font to 2% of viewport */
+  font-family: flappybird;
+  font-size: 4vw;
 
-  color: white; /* White font */
-  text-shadow: /* Give it a 2px of "text shadow" to act as an outline to the score text */ -2px -2px
+  color: white; 
+  text-shadow: -2px -2px
       0 #000,
     2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 

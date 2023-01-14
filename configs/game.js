@@ -84,14 +84,17 @@ $(function () {
 
     $("body").keydown(function (event) {
         console.log(event.which == 49)
-        if (event.which == 49) {
-            resetGame();
-        }
-        if (event.which == 50) {
-            togglePause()
-        }
-        if (event.which) {
-            Birdy.jump();; //Toggle the pause.
+
+        switch (event.which) {
+            case 49:
+                resetGame();
+                break;
+            case 50:
+                togglePause();
+                break;
+            default:
+                Birdy.jump();
+                break;
         }
     });
 

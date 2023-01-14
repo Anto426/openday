@@ -17,7 +17,6 @@ body {
   background: steelblue;
 }
 #Birdy {
- 
   width: 2.9%;
   padding-bottom: 2%;
 
@@ -31,7 +30,22 @@ body {
 
   z-index: 150;
 }
-
+.InstructionBox {
+  top: 2%;
+  position: absolute;
+  width: 250px;
+  height: auto;
+  position: absolute;
+  left: 2%;
+  background-color: orange;
+  display: block;
+  text-align: center;
+  z-index: 150;
+  font-family: flappybird;
+  color: white;
+  font-size: 2vw;
+  border-radius: 10px;
+}
 .FallenBirdy {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -42,13 +56,13 @@ body {
 
 #PauseButton {
   position: absolute;
- 
+
   top: 2%;
   right: 1%;
 
   width: 3%;
   height: 0;
- 
+
   padding-top: 1.25%;
   padding-bottom: 1.75%;
 
@@ -89,7 +103,6 @@ body {
   }
 }
 @-webkit-keyframes PipeMovement {
- 
   from {
     left: 100%;
   }
@@ -98,7 +111,6 @@ body {
   }
 }
 
-
 .paused {
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
@@ -106,7 +118,6 @@ body {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-
 
 .noSelect {
   -webkit-touch-callout: none;
@@ -119,8 +130,8 @@ body {
 
 #LostScoreScreen {
   width: 300px;
-  height: 300px;
- 
+  height: 200px;
+
   position: relative;
   left: -50%;
   margin-top: -50%;
@@ -140,28 +151,25 @@ body {
   font-size: 2vw;
 
   color: white;
-  text-shadow: -2px -2px
-      0 #000,
-    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 
   z-index: 150;
 }
 
 #CurrentScoreCard {
- 
   position: relative;
   left: -50%;
-  margin-top: -700%; 
+  margin-top: -1200%;
 
   text-align: center;
 
   font-family: flappybird;
   font-size: 4vw;
 
-  color: white; 
-  text-shadow: -2px -2px
-      0 #000,
-    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  color: white;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 
   z-index: 50;
 }

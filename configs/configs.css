@@ -89,7 +89,8 @@ body {
 
   width: 5%;
 
-  background-color: red;
+  background-image: url(./file/Tubi_Warp_NSMB2.webp);
+  background-size: 350px;
   animation: PipeMovement 15s linear;
   -webkit-animation: PipeMovement 15s linear;
 }

@@ -16,6 +16,16 @@ body {
   height: 100%;
   background: steelblue;
 }
+
+.logo {
+  height: 224px;
+  width: 225px;
+  background-size: auto;
+  background-image: url(./file/logo.png);
+  position: absolute;
+  top: 40%;
+  left: 44%;
+}
 #Birdy {
   width: 2.9%;
   padding-bottom: 2%;
@@ -159,7 +169,6 @@ body {
 }
 
 #CurrentScoreCard {
- 
   position: relative;
   left: -50%;
   margin-top: 22%;
@@ -170,11 +179,8 @@ body {
   font-size: 4vw;
 
   color: white;
-  text-shadow: -2px -2px
-      0 #000,
-    2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-
-
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 #DebugInfo {
